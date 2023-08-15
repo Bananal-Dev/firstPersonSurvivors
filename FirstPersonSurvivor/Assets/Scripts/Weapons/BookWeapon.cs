@@ -13,7 +13,7 @@ public class BookWeapon : MonoBehaviour
     private bool attacking = false;
     private float currentAngle = 0f;
     private float radius = 0f;
-    private float maxRadius = 8f;
+    private float maxRadius = 4f;
     private float angleSpeed = 450f;
     private float radiusSpeed = 3f;
     private float damage = 15f;

@@ -27,7 +27,8 @@ public class EnemyManager : MonoBehaviour
         {
             DestroyImmediate(gameObject);
         }
-        zombieAnimations.SetFloat("GetHitTime", zombieAnimations.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        if(zombieAnimations)
+            zombieAnimations.SetFloat("GetHitTime", zombieAnimations.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
     void LateUpdate()
     {

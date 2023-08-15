@@ -8,14 +8,14 @@ public class SpawnEnemy : MonoBehaviour
     // Start is called before the first frame update
     public GameObject prefabSpawn;
     
-    private float _middleSpawnCooldown = 10f;
+    private float _middleSpawnCooldown = 6f;
     public float middleSpawnCooldown
     {
         get { return _middleSpawnCooldown;}
         set { _middleSpawnCooldown = value;}
     }
 
-    private float _rangeSpawnCooldown = 5f;
+    private float _rangeSpawnCooldown = 2f;
     public float rangeSpawnCooldown
     {
         get { return _rangeSpawnCooldown;}
@@ -38,6 +38,11 @@ public class SpawnEnemy : MonoBehaviour
         {
             currentTimer = 0f;
             currentCooldown = currentCooldown = Random.Range(_middleSpawnCooldown - _rangeSpawnCooldown, _middleSpawnCooldown - _rangeSpawnCooldown);
+            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
             Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
             Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
             Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 0.3f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
