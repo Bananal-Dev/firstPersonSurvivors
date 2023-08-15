@@ -38,7 +38,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             currentTimer = 0f;
             currentCooldown = currentCooldown = Random.Range(_middleSpawnCooldown - _rangeSpawnCooldown, _middleSpawnCooldown - _rangeSpawnCooldown);
-            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), -1f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
+            Instantiate(prefabSpawn, new Vector3(Random.Range(-10, 10), 2f, Random.Range(-10, 10)) + gameObject.GetComponent<Transform>().position, Quaternion.identity);
         }
     }
 }
