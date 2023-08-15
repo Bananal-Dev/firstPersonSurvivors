@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetToFollow: {fileID: 9167116455883282926, guid: 4952280884b69be43ae88d013a133c31, type: 3}
   transformToFollow: {fileID: 0}
+  zombieAnimations: {fileID: 1115444242939858596}
 --- !u!136 &6773244120238034720
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -166,6 +167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65057e62438c75d4cbbe68dadc84202e, type: 3}
+--- !u!95 &1115444242939858596 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9042721239327401425, guid: 65057e62438c75d4cbbe68dadc84202e, type: 3}
+  m_PrefabInstance: {fileID: 8215948560270764917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6456744000548410590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3142984611341057963, guid: 65057e62438c75d4cbbe68dadc84202e, type: 3}
