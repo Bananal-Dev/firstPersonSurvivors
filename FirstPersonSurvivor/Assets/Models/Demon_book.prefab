@@ -5723,6 +5723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 163219188311830446}
+  - component: {fileID: 338090174864452370}
   m_Layer: 0
   m_Name: Demon_book
   m_TagString: Untagged
@@ -5739,13 +5740,26 @@ Transform:
   m_GameObject: {fileID: 8085585002270115060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5097348326213553133}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &338090174864452370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085585002270115060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7455468, y: 1.5304781, z: 1.946272}
+  m_Center: {x: 1.1381382, y: 0.6061352, z: -0.059726037}
 --- !u!1 &8269165249978889170
 GameObject:
   m_ObjectHideFlags: 0
