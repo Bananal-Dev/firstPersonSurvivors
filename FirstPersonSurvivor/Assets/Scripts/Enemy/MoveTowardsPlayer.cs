@@ -8,6 +8,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     [SerializeField] GameObject targetToFollow;
     [SerializeField] Transform transformToFollow;
     private float _speed = 2.25f;
+    public Animator zombieAnimations;
     public float speed
     {
         get { return _speed; }
@@ -38,7 +39,15 @@ public class MoveTowardsPlayer : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(transformToFollow.position - gameObject.GetComponent<Transform>().position);
 
         if( Vector3.Distance(myPoint, targetPoint) > 1.1f )
+        {
             gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(gameObject.GetComponent<Transform>().position, transformToFollow.position, speed*Time.deltaTime);
+            zombieAnimations.SetBool("AttackZombie", false);
+        }
+        else
+        {
+            zombieAnimations.SetBool("AttackZombie", true);
+        }
         gameObject.GetComponent<Transform>().rotation = Quaternion.Lerp(gameObject.GetComponent<Transform>().rotation, targetRotation, 15f*Time.deltaTime);
+
     }
 }
