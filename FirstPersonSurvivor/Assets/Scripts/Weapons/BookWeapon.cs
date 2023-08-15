@@ -13,10 +13,11 @@ public class BookWeapon : MonoBehaviour
     private bool attacking = false;
     private float currentAngle = 0f;
     private float radius = 0f;
-    private float maxRadius = 5f;
-    private float angleSpeed = 350f;
+    private float maxRadius = 8f;
+    private float angleSpeed = 400f;
     private float radiusSpeed = 3f;
     private float damage = 15f;
+    private float maxAngle = 1020f;
     void Start()
     {
         
@@ -30,7 +31,7 @@ public class BookWeapon : MonoBehaviour
         {
             attacking = true;
         }
-        ManageAttack();
+        // ManageAttack();
     }
 
     void ManageAttack()
@@ -52,13 +53,13 @@ public class BookWeapon : MonoBehaviour
                 float z = radius*Mathf.Sin((currentAngle + bookNumber*(360/bookObjects.Count)) * Mathf.Deg2Rad);
                 book.GetComponent<Transform>().localPosition = new Vector3(x, y, z);
             }
-            if(currentAngle >= 360f)
+            if(currentAngle >= maxAngle)
             {
                 book.SetActive(false);
             }
             bookNumber++;
         }
-        if(currentAngle >= 360f)
+        if(currentAngle >= maxAngle)
         {
             currentAngle = 0f;
             radius = 0;
@@ -69,7 +70,6 @@ public class BookWeapon : MonoBehaviour
     
     void OnTriggerEnter(Collider c)
     {
-        Debug.Log("colisão");
         if(c.gameObject.layer == 6)
         {
             c.gameObject.GetComponent<EnemyManager>().Damage(damage, gameObject.transform.position);
@@ -77,7 +77,6 @@ public class BookWeapon : MonoBehaviour
     }
     void OnTriggerStay(Collider c)
     {
-        Debug.Log("Em colisão");
         if(c.gameObject.layer == 6)
         {
             c.gameObject.GetComponent<EnemyManager>().MoveAwayFrom(gameObject.transform.position);

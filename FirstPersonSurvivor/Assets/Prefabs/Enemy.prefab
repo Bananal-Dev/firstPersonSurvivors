@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _life: 100
+  zombieAnimations: {fileID: 1115444242939858596}
 --- !u!54 &4695936531069788073
 Rigidbody:
   m_ObjectHideFlags: 0
