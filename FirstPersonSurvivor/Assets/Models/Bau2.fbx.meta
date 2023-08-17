@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 295fe0f27c763834e9fc9354be64da81
+guid: 4b585ce421eaab44a97d125c30ea3473
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ferro
+    second: {fileID: 2100000, guid: b1f57f8082dcf284f916fdafb28ed81a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira
+    second: {fileID: 2100000, guid: 2e13ad45c09e1e44684ffafb7302e43d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ouro
+    second: {fileID: 2100000, guid: b9d02ac028adeb64fa5e05898232b008, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
