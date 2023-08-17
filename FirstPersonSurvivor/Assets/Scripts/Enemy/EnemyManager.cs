@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] float _life = 100f;
-    public Animator zombieAnimations;
+    public Animator enemyAnimations;
     public float life
     {
         get { return _life; }
@@ -25,20 +25,20 @@ public class EnemyManager : MonoBehaviour
     {
         if(_life <= 0f)
         {
+            Debug.Log("Morri");
             DestroyImmediate(gameObject);
         }
-        if(zombieAnimations)
-            zombieAnimations.SetFloat("GetHitTime", zombieAnimations.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        if(enemyAnimations)
+            enemyAnimations.SetFloat("GetHitTime", enemyAnimations.GetCurrentAnimatorStateInfo(1).normalizedTime);
     }
     void LateUpdate()
     {
-        zombieAnimations.ResetTrigger("GetHit");
+        enemyAnimations.ResetTrigger("GetHit");
     }
-    public void Damage(float damage, Vector3 origin)
+    public void Damage(float damage)
     {
         life = life - damage;
-        zombieAnimations.SetTrigger("GetHit");
-        MoveAwayFrom(origin);
+        enemyAnimations.SetTrigger("GetHit");
     }
     public void MoveAwayFrom(Vector3 point)
     {

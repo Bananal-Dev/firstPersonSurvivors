@@ -72,7 +72,8 @@ public class BookWeapon : MonoBehaviour
     {
         if(c.gameObject.layer == 6)
         {
-            c.gameObject.GetComponent<EnemyManager>().Damage(damage, gameObject.transform.position);
+            c.gameObject.GetComponent<EnemyManager>().Damage(damage);
+            c.gameObject.GetComponent<EnemyManager>().MoveAwayFrom(gameObject.transform.position);
         }
     }
     void OnTriggerStay(Collider c)

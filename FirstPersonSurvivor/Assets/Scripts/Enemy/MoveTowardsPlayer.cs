@@ -45,15 +45,15 @@ public class MoveTowardsPlayer : MonoBehaviour
         if( Vector3.Distance(myPoint, targetPoint) > 1.1f )
         {
             gameObject.GetComponent<Transform>().position = Vector3.MoveTowards(gameObject.GetComponent<Transform>().position, transformToFollow.position, speed*Time.deltaTime);
-            zombieAnimations.SetBool("AttackZombie", false);
+            zombieAnimations.SetBool("Attack", false);
         }
         else
         {   
             if(attackTimer > attackCooldown)
             {
-                zombieAnimations.SetBool("AttackZombie", true);
-                float currentAnimProgress = zombieAnimations.GetCurrentAnimatorStateInfo(0).normalizedTime;
-                if( (currentAnimProgress - Mathf.Floor(currentAnimProgress))>= 0.6f && zombieAnimations.GetCurrentAnimatorStateInfo(0).IsName("Attacking") && (currentAnimProgress - Mathf.Floor(currentAnimProgress)) < 0.65f)
+                zombieAnimations.SetBool("Attack", true);
+                float currentAnimProgress = zombieAnimations.GetCurrentAnimatorStateInfo(1).normalizedTime;
+                if( (currentAnimProgress - Mathf.Floor(currentAnimProgress))>= 0.6f && zombieAnimations.GetCurrentAnimatorStateInfo(1).IsName("Attacking") && (currentAnimProgress - Mathf.Floor(currentAnimProgress)) < 0.65f)
                 {
                     attackTimer = 0f;
                     targetToFollow.GetComponent<PlayerManager>().TakeDamage(15f);

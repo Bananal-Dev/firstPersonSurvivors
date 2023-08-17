@@ -6,7 +6,8 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject prefabSpawn;
+    public GameObject zombieSpawn;
+    public GameObject skeletonSpawn;
     
     private float _middleSpawnCooldown = 6f;
     public float middleSpawnCooldown
@@ -33,6 +34,12 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject prefabSpawn;
+        if(Random.Range(0,100) > 50f)
+            prefabSpawn = zombieSpawn;
+        else
+            prefabSpawn = skeletonSpawn;
+            
         currentTimer += Time.deltaTime;
         if(currentTimer > currentCooldown)
         {
